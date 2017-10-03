@@ -1,0 +1,50 @@
+
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Car's Horsepower</title>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    $( "#slider-range" ).slider({
+      range: true,
+      min: 0,
+      max: 500,
+      values: [ 75, 300 ],
+      slide: function( event, ui ) {
+        $( "#Horsepower" ).val(ui.values[ 0 ] + "HP - " + ui.values[ 1 ] +"HP");
+      }
+    });
+    $( "#Horsepower" ).val($( "#slider-range" ).slider( "values", 0 ) +
+      "HP - " + $( "#slider-range" ).slider( "values", 1 ) + "HP");
+  } );
+  </script>
+</head>
+<body>
+ 
+<div class="block1">
+  <h1>Find Your Sutiable Car!</h1>
+</div>
+
+<p>
+  <label for="Horsepower">Horsepower (HP) range:</label>
+  <input type="text" id="Horsepower" readonly style="border:0; color:#f6931f; font-weight:bold;">
+</p>
+
+<div id="slider-range"></div>
+
+<div class="boxed">
+  This text is enclosed in a box.
+</div>
+
+
+ 
+</body>
+</html>
+
